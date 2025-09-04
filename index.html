@@ -1,11 +1,244 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TechFuture - DS & IA</title>
+    <style>
+        /* Reset e estilos gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #0a0a1a;
+            color: #f0f0f0;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: #4cc9f0;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Seção 1: Introdução ao DS */
+        .intro-section {
+            background: linear-gradient(to right, #0a0a1a, #160c42);
+            padding: 60px 0;
+        }
+        
+        .intro-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .intro-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-media {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .intro-media img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(76, 201, 240, 0.3);
+        }
+        
+        /* Seção 2: Temas de IA */
+        .ia-section {
+            background-color: #160c42;
+            padding: 60px 0;
+        }
+        
+        .ia-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .ia-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .ia-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(76, 201, 240, 0.2);
+        }
+        
+        .ia-card h3 {
+            color: #f72585;
+            margin-bottom: 15px;
+        }
+        
+        /* Seção 3: Futurista SETEC */
+        .futurista-section {
+            background: linear-gradient(to bottom, #160c42, #000000);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .futurista-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(76,201,240,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .futurista-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-elements {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .tech-element {
+            width: 120px;
+            height: 120px;
+            background: rgba(76, 201, 240, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #4cc9f0;
+            animation: pulse 3s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.4); }
+            70% { box-shadow: 0 0 0 20px rgba(76, 201, 240, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(76, 201, 240, 0); }
+        }
+        
+        .tech-element:nth-child(2) {
+            animation-delay: 1s;
+            border-color: #f72585;
+        }
+        
+        .tech-element:nth-child(3) {
+            animation-delay: 2s;
+            border-color: #7209b7;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .intro-content, .tech-elements {
+                flex-direction: column;
+            }
+            
+            .ia-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Seção 1: Introdução ao Curso de DS -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1>Ciência de Dados: Transformando Informação em Conhecimento</h1>
+                    <p>O curso de Ciência de Dados prepara profissionais para atuar na era da informação, capacitando-os a extrair insights valiosos a partir de grandes volumes de dados.</p>
+                    <p>Nossa abordagem combina fundamentos matemáticos, estatística, programação e conhecimentos específicos de domínio para formar cientistas de dados completos.</p>
+                    <p>Os alunos aprendem a utilizar ferramentas modernas como Python, R, SQL, TensorFlow e diversas bibliotecas especializadas para análise, visualização e modelagem de dados.</p>
+                </div>
+                <div class="intro-media">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='500' height='300' viewBox='0 0 500 300'><rect width='500' height='300' fill='%23211a52'/><text x='250' y='150' font-family='Arial' font-size='24' fill='%234cc9f0' text-anchor='middle'>Visualização de Dados e Analytics</text></svg>" alt="Visualização de Dados">
+                </div>
+            </div>
+        </div>
+    </section>
     
+    <!-- Seção 2: Temas de IA -->
+    <section class="ia-section">
+        <div class="container">
+            <h2>Temas em Destaque na Inteligência Artificial</h2>
+            <div class="ia-grid">
+                <div class="ia-card">
+                    <h3>Machine Learning</h3>
+                    <p>Algoritmos que permitem aos sistemas aprenderem padrões a partir de dados, melhorando seu desempenho com experiência.</p>
+                    <p>Aplicações: sistemas de recomendação, detecção de fraudes, diagnóstico médico.</p>
+                </div>
+                
+                <div class="ia-card">
+                    <h3>Processamento de Linguagem Natural</h3>
+                    <p>Capacidade de máquinas entenderem, interpretarem e gerarem linguagem humana.</p>
+                    <p>Aplicações: chatbots, tradução automática, análise de sentimentos.</p>
+                </div>
+                
+                <div class="ia-card">
+                    <h3>Visão Computacional</h3>
+                    <p>Permite que computadores "vejam" e interpretem o mundo visual através de câmeras e algoritmos.</p>
+                    <p>Aplicações: carros autônomos, reconhecimento facial, realidade aumentada.</p>
+                </div>
+                
+                <div class="ia-card">
+                    <h3>Redes Neurais Profundas</h3>
+                    <p>Arquiteturas complexas inspiradas no cérebro humano, capazes de aprender representações hierárquicas.</p>
+                    <p>Aplicações: geração de imagens, jogos, descoberta de medicamentos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seção 3: Futurista SETEC -->
+    <section class="futurista-section">
+        <div class="container">
+            <div class="futurista-content">
+                <h2>SETEC: Rumo ao Futuro da Tecnologia</h2>
+                <p>Preparando a próxima geração de inovadores e pensadores para um mundo em transformação digital acelerada.</p>
+                <p>Na vanguarda da educação tecnológica, integrando conhecimentos emergentes com fundamentos sólidos.</p>
+                
+                <div class="tech-elements">
+                    <div class="tech-element">
+                        <span>IA</span>
+                    </div>
+                    <div class="tech-element">
+                        <span>IoT</span>
+                    </div>
+                    <div class="tech-element">
+                        <span>Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
