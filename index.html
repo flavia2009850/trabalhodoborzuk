@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -285,6 +286,29 @@
             color: #4cc9f0;
         }
         
+        /* Páginas de conteúdo */
+        .content-page {
+            display: none;
+            padding: 40px 0;
+            min-height: 70vh;
+        }
+        
+        .content-page.active {
+            display: block;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .intro-content, .tech-elements {
@@ -311,114 +335,200 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
+                <div class="logo" onclick="showSection('home')" style="cursor: pointer;">
                     <i class="fas fa-brain"></i>
                     <span>TechFuture</span>
                 </div>
                 <ul class="nav-links">
-                    <li><a href="#intro">Data Science</a></li>
-                    <li><a href="#ia">Inteligência Artificial</a></li>
-                    <li><a href="#futuro">Futuro SETEC</a></li>
+                    <li><a href="#intro" onclick="showSection('home')">Data Science</a></li>
+                    <li><a href="#ia" onclick="showSection('home')">Inteligência Artificial</a></li>
+                    <li><a href="#futuro" onclick="showSection('home')">Futuro SETEC</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Seção 1: Introdução ao Curso de DS -->
-    <section id="intro" class="intro-section">
-        <div class="container">
-            <div class="intro-content">
-                <div class="intro-text">
-                    <h1>Ciência de Dados: Transformando Informação em Conhecimento</h1>
-                    <p>O curso de Ciência de Dados prepara profissionais para atuar na era da informação, capacitando-os a extrair insights valiosos a partir de grandes volumes de dados.</p>
-                    <p>Nossa abordagem combina fundamentos matemáticos, estatística, programação e conhecimentos específicos de domínio para formar cientistas de dados completos.</p>
-                    <p>Os alunos aprendem a utilizar ferramentas modernas como Python, R, SQL, TensorFlow e diversas bibliotecas especializadas para análise, visualização e modelagem de dados.</p>
-                    <a href="ds.html" class="card-link">Saiba mais sobre o curso de DS →</a>
-                </div>
-                <div class="intro-media">
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6kq4k9R_1tE?si=__6kQ2h1v_4Y1QbL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- Página Principal -->
+    <div id="home-page" class="content-page active">
+        <!-- Seção 1: Introdução ao Curso de DS -->
+        <section id="intro" class="intro-section">
+            <div class="container">
+                <div class="intro-content">
+                    <div class="intro-text">
+                        <h1>Ciência de Dados: Transformando Informação em Conhecimento</h1>
+                        <p>O curso de Ciência de Dados prepara profissionais para atuar na era da informação, capacitando-os a extrair insights valiosos a partir de grandes volumes de dados.</p>
+                        <p>Nossa abordagem combina fundamentos matemáticos, estatística, programação e conhecimentos específicos de domínio para formar cientistas de dados completos.</p>
+                        <p>Os alunos aprendem a utilizar ferramentas modernas como Python, R, SQL, TensorFlow e diversas bibliotecas especializadas para análise, visualização e modelagem de dados.</p>
+                        <a href="#" class="card-link" onclick="showSection('ds')">Saiba mais sobre o curso de DS →</a>
+                    </div>
+                    <div class="intro-media">
+                        <div class="video-container">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/6kq4k9R_1tE?si=__6kQ2h1v_4Y1QbL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Seção 2: Temas de IA -->
-    <section id="ia" class="ia-section">
+        </section>
+        
+        <!-- Seção 2: Temas de IA -->
+        <section id="ia" class="ia-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Temas em Destaque na Inteligência Artificial</h2>
+                    <p>Explore os principais conceitos e aplicações da IA no mundo moderno</p>
+                </div>
+                <div class="ia-grid">
+                    <div class="ia-card">
+                        <h3><i class="fas fa-robot"></i> Machine Learning</h3>
+                        <p>Algoritmos que permitem aos sistemas aprenderem padrões a partir de dados, melhorando seu desempenho com experiência.</p>
+                        <p><strong>Aplicações:</strong> sistemas de recomendação, detecção de fraudes, diagnóstico médico.</p>
+                        <a href="#" class="card-link" onclick="showSection('machine-learning')">Ver detalhes →</a>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <h3><i class="fas fa-language"></i> Processamento de Linguagem Natural</h3>
+                        <p>Capacidade de máquinas entenderem, interpretarem e gerarem linguagem humana.</p>
+                        <p><strong>Aplicações:</strong> chatbots, tradução automática, análise de sentimentos.</p>
+                        <a href="#" class="card-link" onclick="showSection('nlp')">Ver detalhes →</a>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <h3><i class="fas fa-eye"></i> Visão Computacional</h3>
+                        <p>Permite que computadores "vejam" e interpretem o mundo visual através de câmeras e algoritmos.</p>
+                        <p><strong>Aplicações:</strong> carros autônomos, reconhecimento facial, realidade aumentada.</p>
+                        <a href="#" class="card-link" onclick="showSection('computer-vision')">Ver detalhes →</a>
+                    </div>
+                    
+                    <div class="ia-card">
+                        <h3><i class="fas fa-network-wired"></i> Redes Neurais Profundas</h3>
+                        <p>Arquiteturas complexas inspiradas no cérebro humano, capazes de aprender representações hierárquicas.</p>
+                        <p><strong>Aplicações:</strong> geração de imagens, jogos, descoberta de medicamentos.</p>
+                        <a href="#" class="card-link" onclick="showSection('neural-networks')">Ver detalhes →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção 3: Futurista SETEC -->
+        <section id="futuro" class="futurista-section">
+            <div class="container">
+                <div class="futurista-content">
+                    <h2>SETEC: Rumo ao Futuro da Tecnologia</h2>
+                    <p>Preparando a próxima geração de inovadores e pensadores para um mundo em transformação digital acelerada.</p>
+                    <p>Na vanguarda da educação tecnológica, integrando conhecimentos emergentes com fundamentos sólidos.</p>
+                    
+                    <div class="tech-elements">
+                        <a href="#" class="tech-element" onclick="showSection('ia-setec')">
+                            <i class="fas fa-robot"></i>
+                            <span>IA</span>
+                        </a>
+                        <a href="#" class="tech-element" onclick="showSection('iot-setec')">
+                            <i class="fas fa-wifi"></i>
+                            <span>IoT</span>
+                        </a>
+                        <a href="#" class="tech-element" onclick="showSection('cloud-setec')">
+                            <i class="fas fa-cloud"></i>
+                            <span>Cloud</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Páginas de Conteúdo (inicialmente ocultas) -->
+    <div id="ds-page" class="content-page">
         <div class="container">
-            <div class="section-title">
-                <h2>Temas em Destaque na Inteligência Artificial</h2>
-                <p>Explore os principais conceitos e aplicações da IA no mundo moderno</p>
-            </div>
-            <div class="ia-grid">
-                <div class="ia-card">
-                    <h3><i class="fas fa-robot"></i> Machine Learning</h3>
-                    <p>Algoritmos que permitem aos sistemas aprenderem padrões a partir de dados, melhorando seu desempenho com experiência.</p>
-                    <p><strong>Aplicações:</strong> sistemas de recomendação, detecção de fraudes, diagnóstico médico.</p>
-                    <a href="machine-learning.html" class="card-link">Ver detalhes →</a>
-                </div>
-                
-                <div class="ia-card">
-                    <h3><i class="fas fa-language"></i> Processamento de Linguagem Natural</h3>
-                    <p>Capacidade de máquinas entenderem, interpretarem e gerarem linguagem humana.</p>
-                    <p><strong>Aplicações:</strong> chatbots, tradução automática, análise de sentimentos.</p>
-                    <a href="nlp.html" class="card-link">Ver detalhes →</a>
-                </div>
-                
-                <div class="ia-card">
-                    <h3><i class="fas fa-eye"></i> Visão Computacional</h3>
-                    <p>Permite que computadores "vejam" e interpretem o mundo visual através de câmeras e algoritmos.</p>
-                    <p><strong>Aplicações:</strong> carros autônomos, reconhecimento facial, realidade aumentada.</p>
-                    <a href="computer-vision.html" class="card-link">Ver detalhes →</a>
-                </div>
-                
-                <div class="ia-card">
-                    <h3><i class="fas fa-network-wired"></i> Redes Neurais Profundas</h3>
-                    <p>Arquiteturas complexas inspiradas no cérebro humano, capazes de aprender representações hierárquicas.</p>
-                    <p><strong>Aplicações:</strong> geração de imagens, jogos, descoberta de medicamentos.</p>
-                    <a href="neural-networks.html" class="card-link">Ver detalhes →</a>
-                </div>
-            </div>
+            <a href="#" class="back-button" onclick="showSection('home')">&larr; Voltar para a página inicial</a>
+            <h1>Curso de Ciência de Dados</h1>
+            <p>O curso de Ciência de Dados da SETEC tem como objetivo formar profissionais capacitados para atuar no mercado de trabalho com as mais modernas ferramentas e técnicas de análise de dados.</p>
+            
+            <h2>Grade Curricular</h2>
+            <ul>
+                <li>Fundamentos de Programação</li>
+                <li>Matemática para Ciência de Dados</li>
+                <li>Estatística e Probabilidade</li>
+                <li>Banco de Dados</li>
+                <li>Machine Learning</li>
+                <li>Visualização de Dados</li>
+                <li>Big Data</li>
+            </ul>
+            
+            <h2>Duração e Modalidade</h2>
+            <p>O curso tem duração de 2 anos, com aulas presenciais e atividades online. Oferecemos turmas no período matutino e noturno.</p>
         </div>
-    </section>
-    
-    <!-- Seção 3: Futurista SETEC -->
-    <section id="futuro" class="futurista-section">
+    </div>
+
+    <div id="machine-learning-page" class="content-page">
         <div class="container">
-            <div class="futurista-content">
-                <h2>SETEC: Rumo ao Futuro da Tecnologia</h2>
-                <p>Preparando a próxima geração de inovadores e pensadores para um mundo em transformação digital acelerada.</p>
-                <p>Na vanguarda da educação tecnológica, integrando conhecimentos emergentes com fundamentos sólidos.</p>
-                
-                <div class="tech-elements">
-                    <a href="ia-setec.html" class="tech-element">
-                        <i class="fas fa-robot"></i>
-                        <span>IA</span>
-                    </a>
-                    <a href="iot-setec.html" class="tech-element">
-                        <i class="fas fa-wifi"></i>
-                        <span>IoT</span>
-                    </a>
-                    <a href="cloud-setec.html" class="tech-element">
-                        <i class="fas fa-cloud"></i>
-                        <span>Cloud</span>
-                    </a>
-                </div>
-            </div>
+            <a href="#" class="back-button" onclick="showSection('home')">&larr; Voltar para a página inicial</a>
+            <h1><i class="fas fa-robot"></i> Machine Learning</h1>
+            <p>Machine Learning (Aprendizado de Máquina) é um subcampo da inteligência artificial que se concentra no desenvolvimento de sistemas que aprendem com dados.</p>
+            
+            <h2>Tipos de Aprendizado</h2>
+            <ul>
+                <li><strong>Aprendizado Supervisionado:</strong> O algoritmo aprende a partir de exemplos rotulados.</li>
+                <li><strong>Aprendizado Não Supervisionado:</strong> O algoritmo identifica padrões em dados não rotulados.</li>
+                <li><strong>Aprendizado por Reforço:</strong> O algoritmo aprende através de tentativa e erro, recebendo recompensas por ações corretas.</li>
+            </ul>
+            
+            <h2>Aplicações Práticas</h2>
+            <p>Machine Learning é utilizado em diversas áreas, como recomendações de produtos, detecção de fraudes, diagnósticos médicos, carros autônomos e muito mais.</p>
         </div>
-    </section>
-    
+    </div>
+
+    <!-- Adicione outras páginas de conteúdo aqui -->
+
     <!-- Rodapé -->
     <footer>
         <div class="container">
             <ul class="footer-links">
-                <li><a href="sobre.html">Sobre Nós</a></li>
-                <li><a href="contato.html">Contato</a></li>
-                <li><a href="privacidade.html">Política de Privacidade</a></li>
+                <li><a href="#" onclick="showSection('sobre')">Sobre Nós</a></li>
+                <li><a href="#" onclick="showSection('contato')">Contato</a></li>
+                <li><a href="#" onclick="showSection('privacidade')">Política de Privacidade</a></li>
             </ul>
             <p>&copy; 2023 TechFuture - Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <script>
+        // Função para mostrar a seção correta e esconder as outras
+        function showSection(sectionId) {
+            // Esconder todas as páginas de conteúdo
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Mostrar a página solicitada
+            document.getElementById(sectionId + '-page').classList.add('active');
+            
+            // Rolagem para o topo
+            window.scrollTo(0, 0);
+        }
+        
+        // Adicione mais páginas de conteúdo conforme necessário
+        const additionalPages = [
+            'nlp', 'computer-vision', 'neural-networks', 
+            'ia-setec', 'iot-setec', 'cloud-setec',
+            'sobre', 'contato', 'privacidade'
+        ];
+        
+        // Criar páginas de conteúdo adicionais
+        additionalPages.forEach(page => {
+            const pageElement = document.createElement('div');
+            pageElement.id = `${page}-page`;
+            pageElement.className = 'content-page';
+            pageElement.innerHTML = `
+                <div class="container">
+                    <a href="#" class="back-button" onclick="showSection('home')">&larr; Voltar para a página inicial</a>
+                    <h1>Conteúdo sobre ${page}</h1>
+                    <p>Esta é uma página de exemplo para ${page}. No site real, aqui estaria o conteúdo específico sobre este tópico.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget felis eget urna ultrices ultricies.</p>
+                    <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec velit nunc, elementum eu libero id, aliquet lacinia lectus.</p>
+                </div>
+            `;
+            document.body.insertBefore(pageElement, document.querySelector('footer'));
+        });
+    </script>
 </body>
 </html>
