@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechFuture - DS & IA</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Reset e estilos gerais */
         * {
             margin: 0;
             padding: 0;
@@ -35,10 +35,57 @@
             margin-bottom: 15px;
         }
         
+        /* Navegação */
+        header {
+            background: linear-gradient(to right, #0a0a1a, #160c42);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4cc9f0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #4cc9f0;
+        }
+        
         /* Seção 1: Introdução ao DS */
         .intro-section {
             background: linear-gradient(to right, #0a0a1a, #160c42);
-            padding: 60px 0;
+            padding: 80px 0;
         }
         
         .intro-content {
@@ -60,7 +107,7 @@
         
         .video-container {
             position: relative;
-            padding-bottom: 56.25%; /* Proporção 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 10px;
@@ -79,14 +126,18 @@
         /* Seção 2: Temas de IA */
         .ia-section {
             background-color: #160c42;
-            padding: 60px 0;
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
         }
         
         .ia-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 40px;
         }
         
         .ia-card {
@@ -95,6 +146,8 @@
             padding: 25px;
             transition: transform 0.3s, box-shadow 0.3s;
             border: 1px solid rgba(76, 201, 240, 0.2);
+            display: flex;
+            flex-direction: column;
         }
         
         .ia-card:hover {
@@ -105,12 +158,34 @@
         .ia-card h3 {
             color: #f72585;
             margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ia-card h3 i {
+            margin-right: 10px;
+        }
+        
+        .ia-card p {
+            flex-grow: 1;
+        }
+        
+        .card-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #4cc9f0;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .card-link:hover {
+            text-decoration: underline;
         }
         
         /* Seção 3: Futurista SETEC */
         .futurista-section {
             background: linear-gradient(to bottom, #160c42, #000000);
-            padding: 80px 0;
+            padding: 100px 0;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -146,10 +221,24 @@
             background: rgba(76, 201, 240, 0.1);
             border-radius: 50%;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             border: 2px solid #4cc9f0;
             animation: pulse 3s infinite;
+            text-decoration: none;
+            color: #f0f0f0;
+            transition: all 0.3s;
+        }
+        
+        .tech-element:hover {
+            background: rgba(76, 201, 240, 0.3);
+            transform: scale(1.1);
+        }
+        
+        .tech-element i {
+            font-size: 36px;
+            margin-bottom: 10px;
         }
         
         @keyframes pulse {
@@ -168,6 +257,34 @@
             border-color: #7209b7;
         }
         
+        /* Rodapé */
+        footer {
+            background-color: #0a0a1a;
+            padding: 30px 0;
+            text-align: center;
+            border-top: 1px solid rgba(76, 201, 240, 0.2);
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links li {
+            margin: 0 15px;
+        }
+        
+        .footer-links a {
+            color: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #4cc9f0;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .intro-content, .tech-elements {
@@ -177,12 +294,38 @@
             .ia-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-links li {
+                margin-left: 0;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Cabeçalho com Navegação -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-brain"></i>
+                    <span>TechFuture</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#intro">Data Science</a></li>
+                    <li><a href="#ia">Inteligência Artificial</a></li>
+                    <li><a href="#futuro">Futuro SETEC</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
     <!-- Seção 1: Introdução ao Curso de DS -->
-    <section class="intro-section">
+    <section id="intro" class="intro-section">
         <div class="container">
             <div class="intro-content">
                 <div class="intro-text">
@@ -190,12 +333,11 @@
                     <p>O curso de Ciência de Dados prepara profissionais para atuar na era da informação, capacitando-os a extrair insights valiosos a partir de grandes volumes de dados.</p>
                     <p>Nossa abordagem combina fundamentos matemáticos, estatística, programação e conhecimentos específicos de domínio para formar cientistas de dados completos.</p>
                     <p>Os alunos aprendem a utilizar ferramentas modernas como Python, R, SQL, TensorFlow e diversas bibliotecas especializadas para análise, visualização e modelagem de dados.</p>
+                    <a href="ds.html" class="card-link">Saiba mais sobre o curso de DS →</a>
                 </div>
                 <div class="intro-media">
                     <div class="video-container">
-                      <a href="https://www.youtube.com/watch?v=TM6ezL7VKck">
-                <img src="https://img.youtube.com/vi/TM6ezL7VKck/maxresdefault.jpg"/>
-                      </a>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/6kq4k9R_1tE?si=__6kQ2h1v_4Y1QbL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -203,39 +345,46 @@
     </section>
     
     <!-- Seção 2: Temas de IA -->
-    <section class="ia-section">
+    <section id="ia" class="ia-section">
         <div class="container">
-            <h2>Temas em Destaque na Inteligência Artificial</h2>
+            <div class="section-title">
+                <h2>Temas em Destaque na Inteligência Artificial</h2>
+                <p>Explore os principais conceitos e aplicações da IA no mundo moderno</p>
+            </div>
             <div class="ia-grid">
                 <div class="ia-card">
-                    <h3>Machine Learning</h3>
+                    <h3><i class="fas fa-robot"></i> Machine Learning</h3>
                     <p>Algoritmos que permitem aos sistemas aprenderem padrões a partir de dados, melhorando seu desempenho com experiência.</p>
-                    <p>Aplicações: sistemas de recomendação, detecção de fraudes, diagnóstico médico.</p>
+                    <p><strong>Aplicações:</strong> sistemas de recomendação, detecção de fraudes, diagnóstico médico.</p>
+                    <a href="machine-learning.html" class="card-link">Ver detalhes →</a>
                 </div>
                 
                 <div class="ia-card">
-                    <h3>Processamento de Linguagem Natural</h3>
+                    <h3><i class="fas fa-language"></i> Processamento de Linguagem Natural</h3>
                     <p>Capacidade de máquinas entenderem, interpretarem e gerarem linguagem humana.</p>
-                    <p>Aplicações: chatbots, tradução automática, análise de sentimentos.</p>
+                    <p><strong>Aplicações:</strong> chatbots, tradução automática, análise de sentimentos.</p>
+                    <a href="nlp.html" class="card-link">Ver detalhes →</a>
                 </div>
                 
                 <div class="ia-card">
-                    <h3>Visão Computacional</h3>
+                    <h3><i class="fas fa-eye"></i> Visão Computacional</h3>
                     <p>Permite que computadores "vejam" e interpretem o mundo visual através de câmeras e algoritmos.</p>
-                    <p>Aplicações: carros autônomos, reconhecimento facial, realidade aumentada.</p>
+                    <p><strong>Aplicações:</strong> carros autônomos, reconhecimento facial, realidade aumentada.</p>
+                    <a href="computer-vision.html" class="card-link">Ver detalhes →</a>
                 </div>
                 
                 <div class="ia-card">
-                    <h3>Redes Neurais Profundas</h3>
+                    <h3><i class="fas fa-network-wired"></i> Redes Neurais Profundas</h3>
                     <p>Arquiteturas complexas inspiradas no cérebro humano, capazes de aprender representações hierárquicas.</p>
-                    <p>Aplicações: geração de imagens, jogos, descoberta de medicamentos.</p>
+                    <p><strong>Aplicações:</strong> geração de imagens, jogos, descoberta de medicamentos.</p>
+                    <a href="neural-networks.html" class="card-link">Ver detalhes →</a>
                 </div>
             </div>
         </div>
     </section>
     
     <!-- Seção 3: Futurista SETEC -->
-    <section class="futurista-section">
+    <section id="futuro" class="futurista-section">
         <div class="container">
             <div class="futurista-content">
                 <h2>SETEC: Rumo ao Futuro da Tecnologia</h2>
@@ -243,18 +392,33 @@
                 <p>Na vanguarda da educação tecnológica, integrando conhecimentos emergentes com fundamentos sólidos.</p>
                 
                 <div class="tech-elements">
-                    <div class="tech-element">
+                    <a href="ia-setec.html" class="tech-element">
+                        <i class="fas fa-robot"></i>
                         <span>IA</span>
-                    </div>
-                    <div class="tech-element">
+                    </a>
+                    <a href="iot-setec.html" class="tech-element">
+                        <i class="fas fa-wifi"></i>
                         <span>IoT</span>
-                    </div>
-                    <div class="tech-element">
+                    </a>
+                    <a href="cloud-setec.html" class="tech-element">
+                        <i class="fas fa-cloud"></i>
                         <span>Cloud</span>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- Rodapé -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="sobre.html">Sobre Nós</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="privacidade.html">Política de Privacidade</a></li>
+            </ul>
+            <p>&copy; 2023 TechFuture - Todos os direitos reservados</p>
+        </div>
+    </footer>
 </body>
 </html>
